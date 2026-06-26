@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story — TrueVine Financial LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Page-specific overrides ── */
+    .page-hero {
+      background: linear-gradient(135deg, #0D2E20 0%, #1F4D3A 50%, #2E6B50 100%);
+      padding: 110px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 300px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(200,162,74,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .page-hero .breadcrumb {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.08em;
+    }
+    .page-hero .breadcrumb a { color: var(--gold-light); }
+    .page-hero .breadcrumb a:hover { text-decoration: underline; }
+
+    /* Story section */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .story-visual {
+      background: linear-gradient(135deg, var(--green), #0D2E20);
+      border-radius: 20px;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .story-visual::before {
+      content: '';
+      position: absolute; top: -50px; right: -50px;
+      width: 180px; height: 180px; border-radius: 50%;
+      background: rgba(200,162,74,0.12);
+    }
+    .story-visual-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+    .story-visual-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .story-visual-title {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .story-visual-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+      border-top: 1px solid rgba(200,162,74,0.3);
+      padding-top: 1.25rem;
+      line-height: 1.7;
+    }
+
+    /* Mission / vision cards */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .mv-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--green);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .mv-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+    .mv-card .mv-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .mv-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--green); margin-bottom: 0.5rem; }
+    .mv-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* Timeline */
+    .timeline { margin-top: 3rem; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 24px; top: 0; bottom: 0;
+      width: 2px; background: rgba(31,77,58,0.15);
+    }
+    .timeline-item {
+      display: flex; gap: 2rem;
+      margin-bottom: 2.5rem;
+      padding-left: 0;
+    }
+    .timeline-dot {
+      width: 50px; height: 50px; min-width: 50px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 0 0 4px rgba(31,77,58,0.12);
+      position: relative; z-index: 1;
+    }
+    .timeline-content { padding-top: 0.25rem; }
+    .timeline-content h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--green); margin-bottom: 0.3rem; }
+    .timeline-content p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .mv-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="TrueVine Financial Home">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text">
+          TrueVine Financial
+          <span>Faith. Protection. Legacy.</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#welcome">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#values">Values</a>
+        <a href="index.html#who-we-serve">Who We Serve</a>
+        <a href="about.html" style="color:var(--gold-light);">Our Story</a>
+        <a href="contact.html" class="nav-cta">Book Consultation</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       PAGE HERO
+  ══════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Our Story</p>
+      <div class="tag">Our Story</div>
+      <h1>The Heart Behind TrueVine Financial</h1>
+      <p>
+        We didn't build a financial firm. We built a mission — to walk with families
+        through confusion and lead them into clarity, security, and peace.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOUNDER STORY
+  ══════════════════════════════════ -->
+  <section class="section" id="founder">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-visual">
+          <div class="story-visual-icon">🌿</div>
+          <div class="story-visual-name">Judith Danji</div>
+          <div class="story-visual-title">Founder &amp; Financial Strategist</div>
+          <div class="story-visual-quote">
+            "I started TrueVine Financial because I watched families face the worst moments of their lives without a plan.
+            No family should experience that. I made it my mission to change that — one family at a time."
+          </div>
+        </div>
+        <div class="fade-up">
+          <div class="tag">The Founding Story</div>
+          <h2 class="section-title">Built on a calling, not just a career.</h2>
+          <div class="divider"></div>
+          <p style="color:var(--text-mid); font-size:0.97rem; line-height:1.85; margin-bottom:1.25rem;">
+            TrueVine Financial was founded with one simple but powerful conviction: every family —
+            regardless of income, background, or financial knowledge — deserves access to real protection
+            and real guidance.
+          </p>
+          <p style="color:var(--text-mid); font-size:0.97rem; line-height:1.85; margin-bottom:1.25rem;">
+            Judith Danji built TrueVine Financial to bridge the gap between complex financial products and
+            everyday families who need them. Too many people are sold policies they don't understand, or worse —
+            they have no protection at all when life's storms arrive.
+          </p>
+          <p style="color:var(--text-mid); font-size:0.97rem; line-height:1.85;">
+            Rooted in faith, guided by compassion, and driven by a passion for education, TrueVine Financial
+            exists to ensure that protecting your family feels empowering — not overwhelming.
+          </p>
+          <a href="contact.html" class="btn btn-green" style="margin-top:2rem; display:inline-flex;">
+            Book a Free Conversation →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MISSION & VISION
+  ══════════════════════════════════ -->
+  <section class="section section-alt" id="mission">
+    <div class="container center">
+      <div class="tag">Mission &amp; Vision</div>
+      <h2 class="section-title">What drives everything we do.</h2>
+      <div class="divider"></div>
+      <p class="section-sub">
+        Every conversation, every recommendation, and every relationship at TrueVine Financial
+        is guided by a clear mission and a bold vision.
+      </p>
+      <div class="mv-grid">
+        <div class="mv-card fade-up">
+          <div class="mv-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>
+            To simplify financial protection for everyday families — providing clear, compassionate,
+            faith-driven guidance that removes fear, confusion, and pressure from the process.
+          </p>
+        </div>
+        <div class="mv-card fade-up">
+          <div class="mv-icon">🌅</div>
+          <h3>Our Vision</h3>
+          <p>
+            A world where every family has a protection plan in place before crisis arrives — where
+            financial peace is the standard, not the exception.
+          </p>
+        </div>
+        <div class="mv-card fade-up">
+          <div class="mv-icon">📖</div>
+          <h3>Our Approach</h3>
+          <p>
+            We educate first. We listen deeply. We never pressure. We walk alongside you —
+            from your very first question to a completed plan you understand and trust.
+          </p>
+        </div>
+        <div class="mv-card fade-up">
+          <div class="mv-icon">🙏</div>
+          <h3>Our Foundation</h3>
+          <p>
+            Everything we do is rooted in faith-driven stewardship — believing that wisdom,
+            integrity, and compassion are the best tools for building lasting financial security.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       HOW WE WORK
+  ══════════════════════════════════ -->
+  <section class="section" id="how-we-work">
+    <div class="container">
+      <div class="center">
+        <div class="tag">How We Work</div>
+        <h2 class="section-title">Simple steps. Lasting protection.</h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          We've designed every step of the process to feel calm, clear, and completely pressure-free.
+        </p>
+      </div>
+      <div class="timeline fade-up">
+        <div class="timeline-item">
+          <div class="timeline-dot">💬</div>
+          <div class="timeline-content">
+            <h4>Step 1 — Free Consultation</h4>
+            <p>
+              We start with a relaxed, no-obligation conversation to understand your family's situation,
+              goals, and any protection gaps you may have. No jargon. No pressure. Just clarity.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">🔍</div>
+          <div class="timeline-content">
+            <h4>Step 2 — Protection Gap Review</h4>
+            <p>
+              Together, we review your current coverage (if any), income, dependents, and future goals
+              to identify exactly where your family is exposed and what needs to be addressed.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">🛠️</div>
+          <div class="timeline-content">
+            <h4>Step 3 — Custom Strategy</h4>
+            <p>
+              We build a personalized protection strategy tailored to your life — not a one-size-fits-all
+              product push. We explain every option in plain language until you're fully confident.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">✅</div>
+          <div class="timeline-content">
+            <h4>Step 4 — Implementation &amp; Support</h4>
+            <p>
+              Once you're ready, we guide you through the enrollment process and remain available
+              as your trusted resource — for questions, updates, or life changes down the road.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       VALUES RECAP
+  ══════════════════════════════════ -->
+  <section class="section section-alt" id="values">
+    <div class="container center">
+      <div class="tag">Our Core Values</div>
+      <h2 class="section-title">The pillars of TrueVine Financial.</h2>
+      <div class="divider"></div>
+      <div class="values-grid" style="margin-top:2.5rem;">
+        <div class="value-pill fade-up"><div class="v-icon">✝️</div><div class="v-text">Faith-Driven Guidance</div></div>
+        <div class="value-pill fade-up"><div class="v-icon">🤍</div><div class="v-text">Integrity</div></div>
+        <div class="value-pill fade-up"><div class="v-icon">🫶</div><div class="v-text">Compassion</div></div>
+        <div class="value-pill fade-up"><div class="v-icon">📖</div><div class="v-text">Education</div></div>
+        <div class="value-pill fade-up"><div class="v-icon">🌱</div><div class="v-text">Stewardship</div></div>
+      </div>
+      <blockquote class="faith-scripture fade-up" style="margin-top:3rem;">
+        "A wise person leaves an inheritance for their children's children."
+        <span>— Proverbs 13:22</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CTA
+  ══════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="container" style="position:relative; z-index:2;">
+      <div class="tag" style="background:rgba(200,162,74,0.2); color:var(--gold-light);">Ready to Start?</div>
+      <h2>Let's build your protection plan together.</h2>
+      <p>
+        One conversation can change everything. Schedule your free, no-pressure
+        consultation with TrueVine Financial today.
+      </p>
+      <div class="cta-contacts">
+        <div class="cta-contact-item">📞 <a href="tel:6144325242">614-432-5242</a></div>
+        <div class="cta-contact-item">📧 <a href="mailto:judithdanji@yahoo.com">judithdanji@yahoo.com</a></div>
+      </div>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary" style="font-size:1rem; padding:16px 34px;">
+          📅 Book Your Free Consultation
+        </a>
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-text">🌿 TrueVine Financial LLC</div>
+        <p>Simplifying financial protection for families through faith-driven guidance, compassion, and education.</p>
+        <div class="tagline">"Faith. Protection. Legacy."</div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#welcome">About Us</a></li>
+          <li><a href="index.html#services">Our Services</a></li>
+          <li><a href="index.html#values">Our Values</a></li>
+          <li><a href="index.html#who-we-serve">Who We Serve</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Book Consultation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <ul>
+          <li><a href="tel:6144325242">📞 614-432-5242</a></li>
+          <li><a href="mailto:judithdanji@yahoo.com">📧 judithdanji@yahoo.com</a></li>
+          <li style="font-size:0.87rem; color:rgba(255,255,255,0.4); margin-top:0.75rem; line-height:1.5;">
+            📍 TrueVine Financial LLC<br/>Columbus, Ohio
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TrueVine Financial LLC. All rights reserved. | Faith. Protection. Legacy.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links  = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.style.display === 'flex';
+        links.style.display = open ? 'none' : 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '72px';
+        links.style.left = '0'; links.style.right = '0';
+        links.style.background = 'rgba(31,77,58,0.98)';
+        links.style.padding = '1.5rem 2rem';
+        links.style.gap = '1.25rem';
+        links.style.zIndex = '998';
+      });
+    }
+  </script>
+</body>
+</html>
