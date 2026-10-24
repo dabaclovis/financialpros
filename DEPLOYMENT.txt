@@ -13,7 +13,8 @@ PUBLISHING
 3. Verify every page, robots.txt, and sitemap.xml returns HTTP 200 publicly,
    without a password, bot challenge, staging noindex header, or crawler block.
    Confirm the host does not inject analytics/ads that conflict with privacy.html.
-4. Confirm the original business information still present in the site:
+4. The public-facing name is TrueVine Financial, as requested by the owner.
+   Confirm the business information present in the site:
    business name, founder biography/quotation, Columbus location, and the email
    judithdanji@yahoo.com. The phone was updated to the number supplied by the owner.
    Have the responsible business owner approve all content and policy statements.

@@ -78,7 +78,7 @@ test('every page uses the branded SVG favicon', () => {
   const svg = read('favicon.svg');
   assert.match(svg, /<svg[^>]+xmlns="http:\/\/www.w3.org\/2000\/svg"/);
   assert.match(svg, /viewBox="0 0 64 64"/);
-  assert.match(svg, /<title>TrueVine Legacy LLC<\/title>/);
+  assert.match(svg, /<title>TrueVine Financial<\/title>/);
   for (const name of pages) {
     const icons = tags(read(name), 'link').filter(tag => tag.rel === 'icon');
     assert.equal(icons.length, 1, `${name}: one favicon`);
@@ -88,18 +88,19 @@ test('every page uses the branded SVG favicon', () => {
   }
 });
 
-test('visible logos consistently use TrueVine Legacy LLC', () => {
+test('visible logos consistently use TrueVine Financial', () => {
   for (const name of pages) {
     const html = read(name);
     const logos = [...html.matchAll(/<div class="logo-text">([\s\S]*?)<\/div>/g)];
     assert.equal(logos.length, 2, `${name}: navigation and footer logos`);
     for (const logo of logos) {
-      assert.match(logo[1], /TrueVine Legacy LLC/);
-      assert.doesNotMatch(logo[1], /TrueVine Financial/);
+      assert.match(logo[1], /TrueVine Financial/);
     }
-    assert.match(html, /aria-label="TrueVine Legacy LLC Home"/);
+    assert.doesNotMatch(html, /legacy|\bllc\b/i, `${name}: current branding throughout`);
+    assert.equal(tags(html, 'meta').find(tag => tag.property === 'og:site_name')?.content, 'TrueVine Financial');
+    assert.match(html, /aria-label="TrueVine Financial Home"/);
   }
-  assert.match(read('index.html'), /class="shield-llc">Legacy LLC<\/div>/);
+  assert.match(read('index.html'), /class="shield-label">Financial<\/div>/);
 });
 
 test('sitemap covers exactly the canonical pages and robots advertises it', () => {
