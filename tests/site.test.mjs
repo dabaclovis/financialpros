@@ -69,9 +69,23 @@ test('local links, fragments, scripts, and styles resolve', () => {
       assert.ok(tags(html, 'a').some(tag => tag.href === policy), `${name}: ${policy} discoverable`);
     }
     const phones = tags(html, 'a').filter(tag => tag.href?.startsWith('tel:'));
-    assert.ok(phones.every(tag => tag.href === 'tel:+16147792576'), `${name}: confirmed phone`);
-    assert.doesNotMatch(html, /6144325242|614-432-5242|consultationForm|formSuccess/);
+    assert.ok(phones.every(tag => tag.href === 'tel:+16144325242'), `${name}: confirmed phone`);
+    assert.doesNotMatch(html, /6147792576|614-779-2576|consultationForm|formSuccess/);
   }
+});
+
+test('visible logos consistently use TrueVine Legacy LLC', () => {
+  for (const name of pages) {
+    const html = read(name);
+    const logos = [...html.matchAll(/<div class="logo-text">([\s\S]*?)<\/div>/g)];
+    assert.equal(logos.length, 2, `${name}: navigation and footer logos`);
+    for (const logo of logos) {
+      assert.match(logo[1], /TrueVine Legacy LLC/);
+      assert.doesNotMatch(logo[1], /TrueVine Financial/);
+    }
+    assert.match(html, /aria-label="TrueVine Legacy LLC Home"/);
+  }
+  assert.match(read('index.html'), /class="shield-llc">Legacy LLC<\/div>/);
 });
 
 test('sitemap covers exactly the canonical pages and robots advertises it', () => {
