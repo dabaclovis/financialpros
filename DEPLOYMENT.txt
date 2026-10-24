@@ -1,0 +1,72 @@
+TRUEVINE FINANCIAL: PUBLISHING AND ADSENSE READINESS
+
+Website: https://financialpros.brotherfall.com
+Confirmed public phone: +1 614-432-5242
+
+PUBLISHING
+1. Upload the HTML pages, styles.css, site.js, robots.txt, and sitemap.xml to
+   the public document root. No build step or npm installation is needed.
+   Do not upload this checklist, the tests folder, or repository internals.
+2. Serve the site over HTTPS. Redirect HTTP to HTTPS and choose one hostname.
+   Redirect /index.html to / at the host if supported. Both home URLs point
+   search engines to the root canonical URL, but a redirect is preferable.
+3. Verify every page, robots.txt, and sitemap.xml returns HTTP 200 publicly,
+   without a password, bot challenge, staging noindex header, or crawler block.
+   Confirm the host does not inject analytics/ads that conflict with privacy.html.
+4. Confirm the original business information still present in the site:
+   business name, founder biography/quotation, Columbus location, and the email
+   judithdanji@yahoo.com. The phone was updated to the number supplied by the owner.
+   Have the responsible business owner approve all content and policy statements.
+5. Have an appropriately qualified reviewer check financial content and legal
+   notices. Publish real license details, authorized service areas, and accurately
+   described qualifications once verified. Do not invent a reviewer or credential.
+6. The former contact form did not send messages. It was replaced by phone and
+   email links. Test the email inbox and phone yourself. If adding a real form
+   later, connect a secure backend, validate server-side, handle delivery errors,
+   obtain appropriate permissions, and update the privacy policy.
+
+GOOGLE SEARCH
+1. Verify ownership of this hostname in Google Search Console using the method
+   available for your host. Do not add someone else's verification code.
+2. Submit https://financialpros.brotherfall.com/sitemap.xml.
+3. Inspect the homepage and guide URL and request indexing if appropriate.
+4. Monitor indexing, crawl errors, mobile usability, and real Core Web Vitals.
+   Metadata and a sitemap help discovery; they do not guarantee indexing/rankings.
+5. Add genuine, reviewed educational material over time. Avoid duplicate filler,
+   unverified claims, fabricated testimonials, and misleading promises.
+
+BEFORE APPLYING FOR ADSENSE
+1. Google makes the approval decision. No page count, traffic number, or code
+   change guarantees approval. Review eligibility and current publisher policies.
+2. Confirm ownership, age/account eligibility, useful original content, working
+   navigation, accurate business identity, and legally appropriate disclosures.
+3. The site currently contains no AdSense or analytics tags and no cookie banner.
+   Do not add a pretend consent banner. Before activating relevant tracking,
+   configure a suitable consent mechanism. For personalized Google ads in the
+   EEA, UK, and Switzerland, follow Google's certified CMP requirements.
+   Review other regional notice, opt-out, and consent obligations as applicable.
+4. Update privacy.html to describe the providers and actual practices in use.
+   Its current advertising section is explicitly conditional, not a claim that
+   Google ads are running. Legal notices need approval against actual operations.
+5. Use only the verification/AdSense tag supplied by your own AdSense account.
+   No publisher ID has been fabricated or installed.
+6. When your AdSense account supplies an authorized ads.txt record, create
+   /ads.txt using the exact record from that account and verify it publicly.
+   No ads.txt is included because a placeholder publisher ID is invalid.
+7. Keep any future ads clearly separate from contact actions and editorial content.
+   Do not encourage ad clicks, simulate ads, or place misleading ad buttons.
+8. Re-check the site after enabling ads. Test consent choices, rejection behavior,
+   layout stability, page speed, and the privacy disclosures before release.
+
+LOCAL VALIDATION
+Run from the repository root with Node.js 18 or newer:
+  node --test tests\site.test.mjs
+  node --check site.js
+
+Official guidance:
+https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
+https://support.google.com/adsense/answer/9724
+https://support.google.com/adsense/answer/48182
+https://support.google.com/adsense/answer/1348695
+https://support.google.com/adsense/answer/13554116

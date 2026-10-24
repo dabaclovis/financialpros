@@ -4,10 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Story — TrueVine Financial LLC</title>
-  <meta name="description" content="Discover the story behind TrueVine Financial LLC, founded by Judith Danji to provide faith-driven financial protection solutions for families. Learn about our mission, vision, and values." />
-  <meta name="keywords" content="TrueVine Financial story, Judith Danji, financial protection, life insurance, family legacy, income protection, business protection, living benefits, faith-driven guidance">
+  <meta name="description" content="Meet TrueVine Financial founder Judith Danji. Learn about our faith-driven mission, education-first approach, and steps toward a clearer family protection plan." />
   <meta name="author" content="TrueVine Financial LLC">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://financialpros.brotherfall.com/about.html" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1F4D3A" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TrueVine Financial LLC" />
+  <meta property="og:title" content="Our Story — TrueVine Financial LLC" />
+  <meta property="og:description" content="Meet founder Judith Danji and learn about TrueVine's education-first approach to family protection." />
+  <meta property="og:url" content="https://financialpros.brotherfall.com/about.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Our Story — TrueVine Financial LLC" />
+  <meta name="twitter:description" content="Learn about TrueVine's mission and education-first approach." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ── Page-specific overrides ── */
@@ -143,6 +155,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ══════════════════════════════════
        NAVBAR
@@ -156,15 +169,16 @@
           <span>Faith. Protection. Legacy.</span>
         </div>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="main-navigation">
         <a href="index.html#welcome">About</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#values">Values</a>
         <a href="index.html#who-we-serve">Who We Serve</a>
-        <a href="about.html" style="color:var(--gold-light);">Our Story</a>
+        <a href="about.html" aria-current="page">Our Story</a>
+        <a href="protection-guide.html">Learning Center</a>
         <a href="contact.html" class="nav-cta">Book Consultation</a>
       </div>
-      <button class="nav-toggle" aria-label="Toggle menu">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -173,6 +187,7 @@
   <!-- ══════════════════════════════════
        PAGE HERO
   ══════════════════════════════════ -->
+  <main id="main-content">
   <section class="page-hero">
     <div class="container">
       <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Our Story</p>
@@ -358,6 +373,17 @@
   <!-- ══════════════════════════════════
        CTA
   ══════════════════════════════════ -->
+  <section class="section education">
+    <div class="container">
+      <h2 class="section-title">Education comes before a decision.</h2>
+      <p class="section-sub">Our learning resources explain trade-offs, not just benefits. Examples are hypothetical,
+        and a guide is not a quote, an approval, or a recommendation to buy a specific policy.</p>
+      <p>Start with our <a href="protection-guide.html">family protection guide</a> and read our
+        <a href="editorial-policy.html">editorial and corrections policy</a>. Before an insurance transaction,
+        ask for the professional's license details, authorized states, insurer information, and compensation explanation.
+        A professional title on this site is not proof of a license or certification.</p>
+    </div>
+  </section>
   <section class="cta-section">
     <div class="container" style="position:relative; z-index:2;">
       <div class="tag" style="background:rgba(200,162,74,0.2); color:var(--gold-light);">Ready to Start?</div>
@@ -367,7 +393,7 @@
         consultation with TrueVine Financial today.
       </p>
       <div class="cta-contacts">
-        <div class="cta-contact-item">📞 <a href="tel:6144325242">614-432-5242</a></div>
+        <div class="cta-contact-item">📞 <a href="tel:+16147792576">614-779-2576</a></div>
         <div class="cta-contact-item">📧 <a href="mailto:judithdanji@yahoo.com">judithdanji@yahoo.com</a></div>
       </div>
       <div class="cta-buttons">
@@ -382,6 +408,7 @@
   <!-- ══════════════════════════════════
        FOOTER
   ══════════════════════════════════ -->
+  </main>
   <footer aria-label="Site footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -404,43 +431,27 @@
       <div class="footer-col">
         <h5>Contact Us</h5>
         <ul>
-          <li><a href="tel:6144325242">📞 614-432-5242</a></li>
+          <li><a href="tel:+16147792576">📞 614-779-2576</a></li>
           <li><a href="mailto:judithdanji@yahoo.com">📧 judithdanji@yahoo.com</a></li>
-          <li style="font-size:0.87rem; color:rgba(255,255,255,0.4); margin-top:0.75rem; line-height:1.5;">
+          <li style="font-size:0.87rem; color:rgba(255,255,255,0.78); margin-top:0.75rem; line-height:1.5;">
             📍 TrueVine Financial LLC<br/>Columbus, Ohio
           </li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
+      <nav class="footer-policy" aria-label="Resources and policies">
+        <a href="protection-guide.html">Learning Center</a>
+        <a href="editorial-policy.html">Editorial Policy</a>
+        <a href="privacy.html">Privacy &amp; Cookies</a>
+        <a href="terms.html">Terms &amp; Disclosures</a>
+      </nav>
+      <p class="footer-disclaimer">General education, not individualized financial, tax, or legal advice.
+        Insurance availability and benefits depend on licensing, state, insurer, underwriting, and contract terms.</p>
       <p>© 2026 TrueVine Financial LLC. All rights reserved. | Faith. Protection. Legacy.</p>
     </div>
   </footer>
 
-  <script>
-    // Fade-up animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const links  = document.querySelector('.nav-links');
-    if (toggle && links) {
-      toggle.addEventListener('click', () => {
-        const open = links.style.display === 'flex';
-        links.style.display = open ? 'none' : 'flex';
-        links.style.flexDirection = 'column';
-        links.style.position = 'absolute';
-        links.style.top = '72px';
-        links.style.left = '0'; links.style.right = '0';
-        links.style.background = 'rgba(31,77,58,0.98)';
-        links.style.padding = '1.5rem 2rem';
-        links.style.gap = '1.25rem';
-        links.style.zIndex = '998';
-      });
-    }
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>
