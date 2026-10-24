@@ -74,6 +74,20 @@ test('local links, fragments, scripts, and styles resolve', () => {
   }
 });
 
+test('every page uses the branded SVG favicon', () => {
+  const svg = read('favicon.svg');
+  assert.match(svg, /<svg[^>]+xmlns="http:\/\/www.w3.org\/2000\/svg"/);
+  assert.match(svg, /viewBox="0 0 64 64"/);
+  assert.match(svg, /<title>TrueVine Legacy LLC<\/title>/);
+  for (const name of pages) {
+    const icons = tags(read(name), 'link').filter(tag => tag.rel === 'icon');
+    assert.equal(icons.length, 1, `${name}: one favicon`);
+    assert.equal(icons[0].href, 'favicon.svg');
+    assert.equal(icons[0].type, 'image/svg+xml');
+    assert.equal(icons[0].sizes, 'any');
+  }
+});
+
 test('visible logos consistently use TrueVine Legacy LLC', () => {
   for (const name of pages) {
     const html = read(name);

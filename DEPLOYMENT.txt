@@ -4,7 +4,7 @@ Website: https://financialpros.brotherfall.com
 Confirmed public phone: +1 614-432-5242
 
 PUBLISHING
-1. Upload the HTML pages, styles.css, site.js, robots.txt, and sitemap.xml to
+1. Upload the HTML pages, styles.css, site.js, favicon.svg, robots.txt, and sitemap.xml to
    the public document root. No build step or npm installation is needed.
    Do not upload this checklist, the tests folder, or repository internals.
 2. Serve the site over HTTPS. Redirect HTTP to HTTPS and choose one hostname.
